@@ -10,7 +10,7 @@
 
 
 ### Project: PUSH BUTTON COUNTER
-![image alt](https://github.com/pavankum123/codetech-task1/blob/71039a2df84e4fc5051157e61e9198ff699bb1fc/Screenshot%202024-12-29%20123306.jpg)
+![image alt](https://github.com/pavankum123/codetech-Atask1/blob/9bb58358e1d5c691f3aac5b7ce34d858079d06b4/pushbutton.webp)
 
 ### Objective
 The system should accurately count how many times a push button is pressed. Each press increments a counter, which can be displayed to the user.
