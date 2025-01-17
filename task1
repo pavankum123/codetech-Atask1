@@ -1,0 +1,44 @@
+#include <Wire.h>
+
+// Pin configuration
+const int buttonPin = 2;  // Push button connected to pin 2
+int buttonState = 0;       // Variable to store button state
+int lastButtonState = 0;   // Variable to store last button state
+int buttonPressCount = 0;  // Variable to store the press count
+
+// LCD display configuration (address may vary based on your LCD module)
+
+void setup() {
+  pinMode(buttonPin, INPUT); // Set button pin as input
+  
+  // Initialize the LCD
+  delay(1000);
+  
+  // Start Serial communication (Optional if using Serial Monitor)
+  Serial.begin(9600); // Open Serial Monitor at 9600 baud rate
+}
+
+void loop() {
+  buttonState = digitalRead(buttonPin); // Read the state of the button
+  
+  // Check if the button was pressed (transition from LOW to HIGH)
+  if (buttonState == HIGH && lastButtonState == LOW) {
+    delay(50); // Debounce delay to avoid counting multiple presses
+    
+    buttonPressCount++; // Increment the counter
+    displayCount();     // Update the display (LCD or Serial Monitor)
+  }
+  
+  // Update lastButtonState for next loop
+  lastButtonState = buttonState;
+}
+
+// Function to display the current button press count
+void displayCount() {
+  // Option 1: Display count on LCD
+
+  
+  // Option 2: Alternatively, print count to Serial Monitor
+  Serial.print("Button Press Count: ");
+  Serial.println(buttonPressCount); // Print to Serial Monitor
+}
